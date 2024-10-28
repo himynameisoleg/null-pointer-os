@@ -13,3 +13,19 @@ cargo build --target thumbv7em-none-eabihf
 # Build based on predfined targets in .cargo/config
 cargo build
 ```
+
+## Running bootable image in QEMU
+
+```bash
+# add the following as prerequisites
+cargo install bootimage
+rustup component add llvm-tools-preview
+
+# create bootable disk iamge by running
+cargo bootimage
+
+# run the bootable image using QEMU
+qemu-system-x86_64 -drive format=raw,file=target/x86_64-blog_os/debug/bootimage-blog_os.bin
+```
+
+Subsequent runs can be run with `cargo run`.
