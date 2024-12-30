@@ -73,7 +73,7 @@ impl Writer {
     }
 
     fn new_line(&mut self) {
-        todo!()
+        // TODO: Printing section "https://os.phil-opp.com/vga-text-mode/#printing"
     }
 
     pub fn write_string(&mut self, s: &str) {
